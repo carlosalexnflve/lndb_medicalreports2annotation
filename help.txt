@@ -1,0 +1,41 @@
+General instructions:
+[Copy the content of this directory https://github.com/JoHof/lungmask to lungmask-master]
+[You can change the location of the LNDETECTOR Database in the main.py code]
+
+report.csv:
+[Up to 6 instances in the dataset, attributes described in the paper]
+- num_report: CT/medical text report ID;
+- loc: nodule location;
+- unc: uncertainty parameter;
+- rem: remaining attributes, namely location2, lesion type, size, and characteristics.
+
+allNods.csv:
+- LNDbID: CT/medical text report ID;
+- RadID: Radiologist ID who annotated the nodule;
+- RadFinding: ID corresponding to when the radiologist annotated;
+- FindingID: Unique ID for nodule identification;
+- Nodule: 1 if it is a nodule, 0 if it is a non-nodule, given for the number of radiologists who annotated;
+- World coordinates {x, y, z};
+- DiamEq_Rad: Equivalent diameter of the segmentation that was done;
+- Characteristics (average of radiologists' annotations) {Texture, Calcification, InternalStructure, Lobulation, Malignancy, Sphericity, Spiculation, Subtlety};
+- Lobe: 1 'LUL', 2 'LLL', 3 'RUL', 4 'ML', 5 'RLL';
+- TextInstanceID: ID of the instance where it appears in the medical report;
+- TextQuestion: Uncertainty parameter;
+- Pos_Text: location2;
+- Diam_Text: diameter written in the medical report;
+- NodType: nodule type;
+- Caract_Text: characteristics related to the nodule in the medical report;
+- Where: whether this nodule is in the medical report, radiologist's annotation, or both.
+[All nodules found between image annotations and in the medical reports]
+
+rad2Fleischner.csv and text2Fleischner.csv:
+- LNDbID: CT/medical text report ID;
+- FindingID: Unique ID for nodule identification;
+- Nodule: 1 if at least 1 radiologist considered it as a nodule, 0 otherwise;
+- Volume: average volume of the segmentation;
+- Texture: average texture of the annotation or as specified in the medical report;
+- Where: whether this nodule is in the medical report, radiologist's annotation, or both
+[rad2Fleischner.csv contains only the image annotated nodules, and text2Fleischner.csv contains those reported in the medical reports]
+
+
+
