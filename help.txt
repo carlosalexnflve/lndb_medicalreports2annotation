@@ -1,6 +1,11 @@
+[LNDb: Pulmonary Nodule Annotations from Medical Reports]
+
 General instructions:
 [Copy the content of this directory https://github.com/JoHof/lungmask to lungmask-master]
 [You can change the location of the LNDETECTOR Database in the main.py code]
+
+chars_trainNodules.csv:
+[same format as trainNodules.csv with Characteristics {Calcification, InternalStructure, Lobulation, Malignancy, Sphericity, Spiculation, Subtlety}]
 
 report.csv:
 [Up to 6 instances in the dataset, attributes described in the paper]
@@ -36,6 +41,3 @@ rad2Fleischner.csv and text2Fleischner.csv:
 - Texture: average texture of the annotation or as specified in the medical report;
 - Where: whether this nodule is in the medical report, radiologist's annotation, or both
 [rad2Fleischner.csv contains only the image annotated nodules, and text2Fleischner.csv contains those reported in the medical reports]
-
-
-
